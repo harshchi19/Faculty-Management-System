@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Employee Management System</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="sidebar">
+      <div class="logo-container">
+        <img src="static/logo.png" alt="Company Logo" class="logo">
+      </div>
+      <ul>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="manage.html">Manage<br>Employees</a></li>
+        <li><a href="#">Category</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="index.html">Logout</a></li>
+      </ul>
+    </nav>
+    {% block body %}
+    {% endblock body %}
+    </div>
+  </div>
+  <script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.sidebar').classList.add('active');
+      document.querySelector('.content').classList.add('active');
+    });
+  </script>
+</body>
+</html>

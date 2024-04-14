@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<!-- Add jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+    body {
+        
+        background-image: url("static/bgimg.png");
+       
+        background-size: cover;
+        background-position: center;
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    .login-container {
+        width: 300px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px  rgba(224, 9, 9, 0.1);
+        background-color: #ffffff; 
+        
+        opacity: 0.9;
+        /* animation hain  yeh */
+        animation-name: fadeInUp;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(150px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+       
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    input[type="email"],
+    input[type="password"],
+    button[type="submit"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box; 
+       /*Annimation hain yeh timen ka*/
+        transition: border-color 0.3s ease-in-out;
+    }
+    
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+        border-color: #84db20; 
+    }
+    
+    button[type="submit"] {
+        background-color: #2013d1;
+        color: white;
+        cursor: pointer;
+        
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    
+    p {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+    <h1>HR</h1>
+    <h2>Login Page</h2>
+    <form id="loginForm" onsubmit="return handleSubmit(event)" >
+        {% csrf_token %}
+        <label for="email">Email:</label>
+        <input type="email" id="email" name='email' placeholder="admin@gmail.com">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name='password' placeholder="Enter Password">
+        <p class="error-message" id="errorMessage"></p>
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <button type="submit">Log in</button>
+    </form>
+</div>
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault(); 
+        
+        // Get email and password values
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Make AJAX request to Django backend
+        $.ajax({
+            url: '/',
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': $('input[name="csrfmiddlewaretoken"]').val()
+            },
+            data: { email: email, password: password },
+            success: function(response) {
+                // If login successful, redirect to profile page
+                if (response.success) {
+                    window.location.href = 'profile.html';
+                } else {
+                    // Show error message in alert
+                    alert(response.error_message);
+                    document.getElementById('email').value = '';
+                    document.getElementById('password').value = '';
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+        
+        return false; 
+    }
+</script>
+
+
+</body>
+</html>

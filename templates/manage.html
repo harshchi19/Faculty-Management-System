@@ -1,0 +1,86 @@
+{% extends "sidebar.html" %}
+
+{% block body %}
+<div class="content">
+  <h2 id="profile">Profile</h2>
+  <table>
+    <tr>
+      <th>Name:</th>
+      <td><b>nklnkl</b></td>
+    </tr>
+    <tr>
+      <th>Address:</th>
+      <td>123 Main Street, Anytown, CA</td>
+    </tr>
+    <tr>
+      <th>Department:</th>
+      <td>{{variable2}}</td>
+    </tr>
+    <tr>
+      <th>Joining Date:</th>
+      <td>2024-01-01</td>
+    </tr>
+    <tr>
+      <th>Qualification:</th>
+      <td>Master's in Computer Science</td>
+    </tr>
+  </table>
+</div>
+{% endblock body %}
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management System</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="sidebar">
+      <div class="logo-container">
+        <img src="static/logo.png" alt="Company Logo" class="logo">
+      </div>
+      <ul>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#">Manage<br>Employees</a></li>
+        <li><a href="#">Category</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <h2 id="profile">Profile</h2>
+      <table>
+        <tr>
+          <th>Name:</th>
+          <td><b>{{variable}}</b></td>
+        </tr>
+        <tr>
+          <th>Address:</th>
+          <td>123 Main Street, Anytown, CA</td>
+        </tr>
+        <tr>
+          <th>Department:</th>
+          <td>IT</td>
+        </tr>
+        <tr>
+          <th>Joining Date:</th>
+          <td>2024-01-01</td>
+        </tr>
+        <tr>
+          <th>Qualification:</th>
+          <td>Master's in Computer Science</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.sidebar').classList.add('active');
+      document.querySelector('.content').classList.add('active');
+    });
+  </script>
+</body>
+</html> {% endcomment %}
