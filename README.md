@@ -3,13 +3,12 @@ The FacultyFlo web application aims to simplify administrative and communication
 
 **Table of Contents**
 
-
--Features
--Installation
--Usage
--Support
--Contributing
--License
+Features,
+Installation,
+Usage,
+Support,
+Contributing,
+License
 
 ## Features
 
