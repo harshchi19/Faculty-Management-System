@@ -87,8 +87,8 @@ For any inquiries or support, please contact us:
 
 ## Contribution
 
--Harsh Chitaliya
--Deep Jain 
+- Harsh Chitaliya
+- Deep Jain 
 - Gaurav Singh Khati
 - Atharva Patkar
 
