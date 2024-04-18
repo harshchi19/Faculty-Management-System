@@ -29,7 +29,7 @@ To run FacultyFlo locally, follow these steps:
 
 1. Clone this repository.
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/harshchi19/Faculty-Management-System.git
    ```
 
 2. Navigate into the project directory.
