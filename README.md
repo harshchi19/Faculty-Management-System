@@ -2,6 +2,8 @@
 The FacultyFlo web application aims to simplify administrative and communication processes within educational institutions. It provides a user-friendly interface for faculty members to log in, submit leave applications, access essential tools and applications, and interact with an AI-powered chatbot for assistance.
 
 **Table of Contents**
+
+
 -Features
 -Installation
 -Usage
