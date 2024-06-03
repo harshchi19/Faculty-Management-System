@@ -22,6 +22,7 @@ License
 - **Leave Application Submission:** Faculty members can submit leave applications through the web interface, providing details such as the description, start date, and end date.
 - **Access to Tools and Applications:** The application provides links to various tools and applications commonly used in educational settings, such as Microsoft and Google apps, as well as other useful websites.
 - **AI-Powered Chatbot:** Users can interact with an AI-powered chatbot to get assistance with various queries and tasks.
+- **Chatroom**:Faculties can Chat and make discussion among themselves 
 
 
 ## Installation
