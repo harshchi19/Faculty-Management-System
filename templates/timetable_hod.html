@@ -1,0 +1,16 @@
+{% extends 'sidebar_hod.html' %}
+
+{% block body %} 
+<form action = 'timetable_hod' method ='GET' >
+  {% csrf_token %}
+  <div class="content" >
+    <h1>Time Table</h1>
+    
+    {% if TimeTable %}
+      <img src="data:image;base64,{{TimeTable}}" alt="Time Table" width='1000' height='500'>
+    {% else %}
+      <p>No timetable found for this department.</p>
+    {% endif %}
+  </div>
+</form>
+{% endblock %}

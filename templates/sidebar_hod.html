@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css'>
+    <link rel="stylesheet" href="static/navbar.css">
+    
+</head>
+<body>
+     <div class="sidebar">
+        <div class="nav-logo">
+            <img src="static/Images/Faculty Flowlogo.png" alt="Logo">
+            <span>FacultyFlo</span>
+        </div>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="profile_hod.html" class="active">Profile</a></li>
+            <li><a href="https://www.djsce.ac.in/">Our College Website</a></li>
+            <li><a href="timetable_hod.html">Time Table</a></li>
+            <li><a href="chatroom_hod.html">Community Space</a></li>
+            <li><a href="leave_application_hod.html">Leave Application</a></li>
+            <li><a href="tools_hod.html">Tools</a></li>
+            <li><a href="https://facultyflo.streamlit.app/">AssistGPT</a></li> 
+            <li><a href="index.html">Logout</a></li>
+          </ul>
+        </nav>
+        
+        <a href="https://mediafiles.botpress.cloud/879c6c35-a489-46d2-bff5-07f16fae1739/webchat/bot.html" class="circular-btn">
+          <img src="static/Images/chatbot.png">
+        </a>
+      </div>
+      <div style="padding-left:259px;">
+      {% block body %}
+      {% endblock body %}
+      </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  {% comment %} 
+function handleSubmit(event) 
+{
+    event.preventDefault();
+        
+    const description = document.getElementById('description').value;
+    const start_date = document.getElementById('start_date').value;
+    const end_date = document.getElementById('end_date').value;
+        
+    $.ajax({
+        action: 'create_leave_application',
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': $('input[name="csrfmiddlewaretoken"]').val()
+        },
+        data: {
+            'description': description,
+            'start_date': start_date,
+            'end_date': end_date
+        },
+        success: function(response) {
+            displayMessage('Leave Application Sent Successfully', 'green');
+            document.getElementById('description').value = '';
+            document.getElementById('start_date').value = '';
+            document.getElementById('end_date').value = '';
+        },
+        error: function(error) {
+            displayMessage('Leave Application Not Sent', 'red');
+        }
+    });
+
+    return false; // Prevent the form from submitting normally
+}
+
+function displayMessage(message, color) {
+    const messageBox = document.createElement('div');
+    messageBox.textContent = message;
+    messageBox.style.backgroundColor = color;
+    messageBox.style.padding = '10px';
+    messageBox.style.color = 'white';
+    messageBox.style.marginTop = '10px';
+    messageBox.style.transition = 'opacity 5s'; 
+    messageBox.style.marginLeft = '249px';
+    document.body.appendChild(messageBox);
+
+    messageBox.getBoundingClientRect();
+
+    messageBox.style.opacity = 1;
+
+    setTimeout(function() {
+        messageBox.style.opacity = 0;
+    }, 5000);
+}  {% endcomment %}
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.sidebar').classList.add('active');
+    document.querySelector('.content').classList.add('active');
+  });
+</script>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login as a Institution</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet">
+    <link href="static/index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css"/>
+    
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+    body {
+        background-color: #f2f5f8;
+           font-family: 'Manrope', sans-serif;
+           margin-top: 2.5rem;
+           padding: 0;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           height: 100vh;
+        }
+
+
+
+        #signInButton {
+    transition: all 0.5s;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.5rem;
+    margin-top: 3%;
+    width:275px;
+    font-size: 20px;
+    padding: 8px 30px;
+    border-radius: 7px;
+    background: #000;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 3px 4px 16.4px 0px #000;
+    color: #fff;
+  }
+
+  #signInButton:after {
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s;
+  }
+  
+  #signInButton:hover {
+    background-color: #F68716;
+    border-color: #F68716;
+    box-shadow: #F68716;
+  }
+  
+  #signInButton:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+
+        #message {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #message p {
+            font-size: 18px;
+        }
+
+        #message span {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        #googleLogo {
+            width: 40px; /* Adjust the size as needed */
+            margin-right:10px;
+        }
+
+        .label{
+            transform: none;
+            font-weight: bolder;
+        }
+
+        
+            nav {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              height: 100px;
+              background-color: #fff;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              padding: 1rem 1.5rem;
+              position: fixed;
+              top: 0;
+              left: 0;
+              right: 0;
+              z-index: 100;
+            }
+            
+            /*navigation mein logo k liye css*/
+            
+            .logo {
+              display: flex;
+              align-items: center;
+              color: #212227;
+              font-weight: 1000;
+              font-size: 1.9rem;
+              font-stretch: ultra-condensed;
+              padding-left: 20 px;
+            }
+            
+            .logo img {
+              height: 70px ;
+              width: 70px ;
+              margin-right: 1rem;
+            }
+            
+            /*navigation mein links k liye css*/
+            .nav-links {
+                display: flex;
+                list-style: none;
+                align-items: center;
+              }
+              
+              .nav-links li {
+                margin-right: 0;
+                margin-left: 2.5rem;
+                position: relative;
+              }
+              
+              .nav-links a.nav-lin {
+                text-decoration: none;
+                color: #212227;
+                font-weight: 1000;
+                transition: color 0.3s ease;
+                padding: 0.5rem 1rem;
+                border-radius: 0.25rem;
+                position: relative;
+              }
+              
+              .nav-links a.nav-lin::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #F68716;
+                transform: scaleX(0);
+                transform-origin: center;
+                transition: transform 0.3s ease;
+              }
+            
+              .nav-links a.nav-lin:hover {
+                color: #212227;
+              }
+              
+              .nav-links a.nav-lin:hover::before {
+                transform: scaleX(1);
+              }
+            
+              .nav-btn {
+                background-color: #212227;
+                color: #fff;
+                padding: 0.5rem 1rem;
+                border-radius: 0.50rem;
+                transition: all 0.5s;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+                font-weight: 600;
+                font-size: 1rem;
+                width: 140px;
+                height: 50px;
+              }
+            
+              .nav-btn a{
+                text-decoration: none;
+                color: #fff;
+              }
+              
+              .nav-btn:after {
+                content: '>>>';
+                position: absolute;
+                opacity: 0;
+                top: 50%;
+                right: -20px;
+                transform: translateY(-50%);
+                transition: 0.5s;
+              }
+              
+              .nav-btn:hover {
+                background-color: #F68716;
+                border-color: #F68716;
+                box-shadow: #F68716;
+                padding-right: 24px;
+                padding-left: 8px;
+              }
+              
+              .nav-btn:hover:after {
+                opacity: 1;
+                right: 10px;
+              }
+            
+            /*dropdown ka css*/
+              .dropdown {
+                color: #212227;
+                font-family: 'Manrope', sans-serif;
+                font-weight: 1000;
+                font-stretch: ultra-condensed;
+                display: none;
+                position: absolute;
+                margin-top:20%;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+              }
+              
+              .nav-links li:hover > .dropdown {
+                display: block;
+              }
+              
+              .dropdown li {
+                padding: 12px 16px;
+                cursor: pointer;
+              }
+              
+              .dropdown li:hover {
+                background-color: #f68716;
+              }
+              
+              .dropdown li strong {
+                font-weight: bold;
+              }
+          </style>
+          <nav>
+            <div class="logo">
+              <img src="static/Images/Faculty Flowlogo.png" alt="Logo">
+              <span>FacultyFlo</span>
+            </div>
+            <ul class="nav-links">
+              <li><a href="meetourteam.html" class="nav-lin">Meet our Team</a></li>
+              <li><a href="#" class="nav-lin">About Us</a></li>
+              <li><a href="#" class="nav-lin">Pricing</a></li>
+              <li><a href="#" class="nav-lin">Support</a>  
+                  <ul class="dropdown">
+                    <li>Contact No: +919820904940</li>
+                    <li>Email: facultyflo.care@gmail.com</li>
+                  </ul>
+              </li>
+              <li><a href="reachus.html"><button class="nav-btn"><span>Reach Us</span></button></a></li>
+            </ul>
+          </nav>
+<body class="d-flex justify-content-center p-5">
+    <div class="card" >
+        <div class="card-header">
+            <center><h3>Admin Login</h3></center>
+        </div>
+        <form onsubmit="login()" id="loginForm" class="card-body px-5 py-4">
+            <center><small><span id="error" style="color: red"></span></small></center>
+            <center><label class="custom-field">
+                <input id="email" type="text" class="input" required />
+                <span class="placeholder">Email Id</span>
+            </label><br />
+            <label class="custom-field">
+                <input id="password" type="password" class="input" required />
+                <span class="placeholder">Password</span>
+            </label></center><br />
+            <a href="#" onclick="forgotPass()">Forgot Password</a>
+            <center><button type="submit" class="btn btn-primary">Login</button>
+            <button onclick="signUp()" class="btn btn-secondary">Sign Up</button>
+            </center>
+        </form>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+
+    <script src="static/firebase.js"></script>
+    <script src="static/index.js"></script>
+
+
+    
+    <button id="signInButton"><img id="googleLogo" src="static/Images/googlelogo.jpg" alt="Google Logo" onerror="this.src='googlelogo.jpg'">  Google Sign In</button>
+    <button id="signOutButton">Sign Out</button>
+
+    <div id="message">
+        <p>You have signed in as <span id="userName"></span> with the email <span id="userEmail"></span> </p>
+        <p id="verificationMessage"></p>
+    </div>
+
+    <script type="module">
+  
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, sendEmailVerification, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+  
+    // Add your own Firebase config here
+    const firebaseConfig = {
+        apiKey: "AIzaSyCZx97Ql-4sUVM3MLgx2uV5ZjDu3vyJvJY",
+        authDomain: "fir-project-367bb.firebaseapp.com",
+        projectId: "fir-project-367bb",
+        storageBucket: "fir-project-367bb.appspot.com",
+        messagingSenderId: "153616576371",
+        appId: "1:153616576371:web:d77d4c410397b6a23a9f06",
+        measurementId: "G-7CEE433Q8Y"
+      };
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider()
+
+    const signInButton = document.getElementById("signInButton");
+    const signOutButton = document.getElementById("signOutButton");
+    const message = document.getElementById("message");
+    const userName = document.getElementById("userName");
+    const userEmail = document.getElementById("userEmail");
+    const verificationMessage = document.getElementById("verificationMessage");
+
+    signOutButton.style.display = "none";
+    message.style.display = "none";
+
+    const userSignIn = async () => {
+    signInWithPopup(auth, provider)
+        .then((result) => {
+            const user = result.user;
+            console.log(user);
+            if (!user.emailVerified) {
+                sendVerificationEmail();
+            } else {
+                // Redirect to welcome.html after successful sign-in
+                console.log("Redirecting to Profile.html...");
+                window.location.href = 'welcome.html';
+            }
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error("Error signing in:", errorMessage);
+        });
+};
+
+
+    const userSignOut = async() => {
+        signOut(auth).then(() => {
+            alert("You have signed out successfully!");
+        }).catch((error) => {})
+    }
+
+    const sendVerificationEmail = () => {
+        const user = auth.currentUser;
+        sendEmailVerification(user)
+        .then(() => {
+            verificationMessage.textContent = "A verification email has been sent. Please check your email inbox.";
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    }
+
+    const handleEmailVerification = () => {
+        const user = auth.currentUser;
+        if (user && user.emailVerified) {
+            verificationMessage.textContent = "Your email has been verified.";
+        }
+    }
+
+    onAuthStateChanged(auth, (user) => {
+        if(user) {
+            signOutButton.style.display = "block";
+            message.style.display = "block";
+            userName.innerHTML = user.displayName;
+            userEmail.innerHTML = user.email;
+            handleEmailVerification();
+        } else {
+            signOutButton.style.display = "none";
+            message.style.display = "none";
+        }
+    })
+
+    signInButton.addEventListener('click', userSignIn);
+    signOutButton.addEventListener('click', userSignOut);
+    </script>
+<script>
+    document.getElementById("loginForm").addEventListener("submit",(event)=>{
+    event.preventDefault()
+})
+
+firebase.auth().onAuthStateChanged((user)=>{
+    if(user){
+        location.replace("welcome.html")
+    }
+})
+
+
+</script>
+</body>
+</html>

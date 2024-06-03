@@ -1,0 +1,44 @@
+{% extends "sidebar_faculty.html" %}
+{% block body %}
+<div class="content">
+  <h2 id="profile" style="margin-top:100px">Welcome <b>{{First_name}} {{Last_name}} </b></h2>
+  <img src= "data:image;base64,{{Profile_Image}}"  alt="Your Image" style="position: absolute; top: 0;right:0; left:1259px; width: 270px; height: 270px;">
+  <br>
+  <table style="margin-top: 100px;padding-left: 500px">
+    {% csrf_token %}
+      <th>Designation</th>
+      <td>{{Designation}}</td>
+    </tr>
+    <tr>
+      <th>Department</th>
+      <td>{{Department}}</td>
+    </tr>
+    <tr>
+      <th>Joining Date</th>
+      <td>{{Joining_Date}}</td>
+    </tr>
+    <tr>
+      <th>Institution</th>
+      <td>{{Institution}}</td>
+    </tr>
+    <tr>
+      <th>Email Id</th>
+      <td>{{Email}}</td>
+    </tr>
+    <tr>
+      <th>Contact</th>
+      <td>{{Contact}}</td>
+    </tr>
+    
+    <tr>
+      <th>Qualification</th>
+      <td>{{Qualification}}</td>
+    </tr>
+    <tr>
+      <th>Total Experience in Years</th>
+      <td>{{Experience}} years</td>
+    </tr>
+  </table>
+</div>
+{% endblock body %}
+

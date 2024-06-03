@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Meet Our Team</title>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<style type="text/css">
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+}
+
+header
+{
+width: 100%;
+height: 100vh;
+background-color: #f5f5f5;
+margin-top: 100px;
+font-family: 'Manrope', sans-serif;
+}
+
+.container
+{
+width: 1200px;
+height: 100vh;
+margin: auto;
+text-align: center;
+padding-top: 80px;
+}
+
+.container h1
+{
+font-size: 70px;
+}
+.row
+{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-top: 50px;
+}
+.row .box
+{
+width: 500px;
+height: 440px;
+background-color: #fff;
+box-shadow: 8px 8px 20px 1px gray;
+border-radius: 10px;
+border: 5px solid lightgray;
+padding: 15px;
+margin: 15px;
+cursor: pointer;
+transition: border-color 0.3s ease;
+}
+
+.row .box:hover {
+  border-color: #f68716;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.row .box img
+{
+width: 130px;
+border-radius: 50%;
+margin-top: 25px;
+}
+.row .box h2
+{
+  font-family: 'Manrope',sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: -0.895px;
+  color: #f68716;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  border-bottom: 0.5px solid #F68716;
+}
+.row .box h4
+{
+padding-top: 10px;
+color: rgb(78, 78, 78);
+font-size: 20px;
+font-family: Arial, Helvetica, sans-serif;
+}
+.row .box h5
+{
+padding-top: 20px;
+font-size: 16px;
+color: grey
+}
+.row .box h6
+{
+font-size: 16px;
+color: grey;
+}
+.row .box ion-icon
+{
+margin-top: 20px;
+font-size: 30px;
+margin: 25px 0px;
+transition: 0.5s;
+color : #000;
+}
+.row .box ion-icon:hover
+{
+color: #ff7159;
+}
+
+/*changes yaha se honge*/
+
+/*Nav bar ka CSS till line 133*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/*navigation mein logo k liye css*/
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #212227;
+  font-weight: 1000;
+  font-size: 1.9rem;
+  font-stretch: ultra-condensed;
+  padding-left: 20 px;
+}
+
+.logo img {
+  height: 70px ;
+  width: 70px ;
+  margin-right: 1rem;
+}
+
+/*navigation mein links k liye css*/
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin-right: 0;
+    margin-left: 2.5rem;
+    position: relative;
+  }
+  
+  .nav-links a.nav-lin {
+    text-decoration: none;
+    color: #212227;
+    font-weight: 1000;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    position: relative;
+  }
+  
+  .nav-links a.nav-lin::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #F68716;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links a.nav-lin:hover {
+    color: #212227;
+  }
+  
+  .nav-links a.nav-lin:hover::before {
+    transform: scaleX(1);
+  }
+
+  .nav-btn {
+    background-color: #212227;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.50rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 140px;
+    height: 50px;
+  }
+
+  .nav-btn a{
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .nav-btn:after {
+    content: '>>>';
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    transition: 0.5s;
+  }
+  
+  .nav-btn:hover {
+    background-color: #F68716;
+    border-color: #F68716;
+    box-shadow: #F68716;
+    padding-right: 24px;
+    padding-left: 8px;
+  }
+  
+  .nav-btn:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+
+/*dropdown ka css*/
+  .dropdown {
+    color: #212227;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 1000;
+    font-stretch: ultra-condensed;
+    display: none;
+    position: absolute;
+    margin-top:20%;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .nav-links li:hover > .dropdown {
+    display: block;
+  }
+  
+  .dropdown li {
+    padding: 12px 16px;
+    cursor: pointer;
+  }
+  
+  .dropdown li:hover {
+    background-color: #f68716;
+  }
+  
+  .dropdown li strong {
+    font-weight: bold;
+  }
+
+h3{ 
+  text-align: center;
+  font-family: 'Manrope',sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 94%; /* 83.66px */
+  letter-spacing: -1.895px;
+  color: #f68716;
+  font-size: 70px;
+}
+
+</style>
+
+<body>
+
+  
+  <nav>
+    <div class="logo">
+      <img src="static/Images/Faculty Flowlogo.png" alt="Logo">
+      <span>FacultyFlo</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-lin">Home</a></li>
+      <li><a href="#" class="nav-lin">Support</a>  
+          <ul class="dropdown">
+            <li>Contact No: +919820904940</li>
+            <li>Email: facultyflo.care@gmail.com</li>
+          </ul>
+      </li>
+      <li><a href="reachus.html"><button class="nav-btn"><span>Reach Us</span></button></a></li>
+    </ul>
+  </nav>
+
+<header>
+<div class="container">
+<h3>Meet Our Team</h3>
+<div class="row">
+<div class="box">
+<img src="static/Images/gaurav.jpeg">
+<h2 >Gaurav Khati</h2>
+<h4>CEO & <br>Co-founder</h4>
+<h5>9321504940</h5>
+<h6>gaurav@facultyflo.com</h6>
+<div class="icon">
+
+<a href="https://www.instagram.com/ryuken_music?utm_source=qr&igsh=d2JtbDIycXc5NHpz"><ion-icon name="logo-instagram"></ion-icon></a>
+<a href="https://www.linkedin.com/in/gaurav-singh-khati-a56133168/"><ion-icon name="logo-linkedin"></ion-icon></a>
+</div>
+</div>
+<div class="box">
+    <img src="static/Images/atharva.jpeg">
+    <h2>Atharva Patkar</h2>
+    <h4>CTO & <br>Co-founder</h4>
+    <h5>9029120785</h5>
+    <h6>atharva@facultyflo.com</h6>
+    <div class="icon">
+    
+  <a href="https://www.instagram.com/atharvaaaa.aa/?igshid=8bhgreuaxmlf">  <ion-icon name="logo-instagram"></ion-icon></a>
+  <a  href="https://www.linkedin.com/in/atharva-patkar-16b223236/">  <ion-icon name="logo-linkedin"></ion-icon></a>
+    </div>
+    </div>
+<div class="box">
+<img src="https://media.licdn.com/dms/image/D4D03AQGofqCxP-h9pg/profile-displayphoto-shrink_800_800/0/1688946512665?e=1718841600&v=beta&t=vf4GJkn9QEzxYNS1x631WYxUiMT-lAejvUO06aGxUrc">
+<h2>Harsh Chitaliya</h2>
+<h4>COO & <br> Co-founder</h4>
+<h5>9321694382</h5>
+<h6>harsh@facultyflo.com</h6>
+<div class="icon">
+
+<a href="https://www.instagram.com/harshchitaliya010"><ion-icon name="logo-instagram"></ion-icon></a>
+<a href="https://www.linkedin.com/in/harshchitaliya/"><ion-icon name="logo-linkedin"></ion-icon></a>
+</div>
+</div>
+<div class="box">
+<img src="static/Images/deep.jpeg">
+<h2>Deep Jain</h2>
+<h4>CFO & <br>Co Founder</h4>
+<h5>7709494643</h5>
+<h6>deep@facultyflo.com</h6>
+<div class="icon">
+
+    <a href="https://www.instagram.com/deepjain.drj?igsh=aTc5eWFmb3RtZXgw"><ion-icon name="logo-instagram"></ion-icon></a>
+<a href="https://www.linkedin.com/in/deep-jain-81230126a/"><ion-icon name="logo-linkedin"></ion-icon></a>
+</div>
+</div>
+</div>
+</div>
+</header>
+</body>
+</html>

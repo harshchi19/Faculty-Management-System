@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="static/index.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+           <span>FacultyFlo.</span>
+        </div>
+        <button class="btn btn-primary btn-lg btn-block" onclick="showFaculties()">Faculty Profiles</button>
+        <button class="btn btn-primary btn-lg btn-block" onclick="showRecommendations()">Course Recommendation</button>
+        <button class="btn btn-primary btn-lg btn-block" onclick="attendanceTracking()">Grade System Management</button>
+        <button class="btn btn-primary btn-lg btn-block" onclick="assignmentProjectsTracking()">Attendance Tracking</button>
+        <button class="btn btn-primary btn-lg btn-block" onclick="gradeSystemManagement()">Assignments/Projects</button>
+        <a href ="home.html"><button class="btn btn-primary btn-lg btn-block" >Chatroom</button></a>
+    </div>
+
+    <div class="content">
+        <center>
+            <div style="margin:100px">
+                <span id="user" class="message">Hello <Email-id ></Email-id></span>
+                <div class="success"><span>Welcome , You are successfully loged in!!!</span></div><br/>
+                <button class="btn btn-danger" onclick='logout()'>Logout</button>
+            </div>
+        </center>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+
+    <script src="static/firebase.js" ></script>
+    <script src="static/index.js" ></script>
+    <script src="static/welcome.js" ></script>
+    
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.logo {
+    color: #fff;
+    font-weight: 1000;
+    font-size: 2.3rem;
+    font-stretch: ultra-condensed;
+    letter-spacing: -1.895px;
+    
+  }
+
+        
+        .sidebar {
+            height: 100%;
+            width: 210px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            padding-top: 20px;
+            padding-left: 10px;
+        }
+
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+
+        .btn-block {
+            margin-bottom: 10px;
+        }
+
+        .sidebar button{
+            background-color: #6dace7;
+            font-family: 'Manrope', sans-serif;
+            width:190px;
+            height:70px;
+            text-transform:none;
+            font-size:1.1rem;
+            font-stretch:condensed;
+
+        }
+        .btn-lg {
+        padding: 0rem 0rem 0rem;
+        font-size: .875rem;
+        line-height: 1.6;
+        }
+
+        .faculty-btn {
+            background-color: #ffa550;
+            display: block;
+            height:2rem;
+            font-family: 'Manrope', sans-serif;
+            height:70px;
+            text-transform:none;
+            font-size:1.7rem;
+            font-stretch:condensed;
+        }
+
+        
+    </style>
+
+    <script>
+        function showFaculties() {
+            var facultyList = [
+                { name: "Sudhir Dhekane", link: "https://www.djsce.ac.in/faculty-docs/329_VTBiodata_Sudhir%20Dhekane.pdf" },
+                { name: "Dashrath Kale", link: "https://www.djsce.ac.in/faculty-docs/Dashrath%20Kale.pdf" },
+                { name: "Pratik Kanani", link: "https://www.djsce.ac.in/faculty-docs/206_VTBiodata_pratikkananiresume.pdf" },
+                { name: "Deepali Patil", link: "https://www.djsce.ac.in/faculty-docs/321_VTBiodata_Deepali%20Patil%20Biodata.pdf" },
+                { name: "Nikita Raichada", link: "https://www.djsce.ac.in/faculty-docs/Nikita%20Raichada_CV.pdf" }
+            ];
+
+            var contentDiv = document.querySelector('.content');
+            contentDiv.innerHTML = ''; // Clear existing content
+            
+            facultyList.forEach(function(faculty) {
+                var button = document.createElement('button');
+                button.textContent = faculty.name;
+                button.className = 'btn btn-primary btn-lg btn-block faculty-btn';
+                button.onclick = function() {
+                    window.open(faculty.link, '_blank');
+                };
+                contentDiv.appendChild(button);
+            });
+        }
+
+        function showRecommendations() {
+            // Update content to display "Coming soon..."
+            var contentDiv = document.querySelector('.content');
+            contentDiv.innerHTML = '<h2>Coming soon...</h2>';
+            
+        }
+        function attendanceTracking() {
+            // Update content to display "Coming soon..."
+            var contentDiv = document.querySelector('.content');
+            contentDiv.innerHTML = '<h2>Coming soon...</h2>';
+        }
+
+        function assignmentProjectsTracking() {
+            // Update content to display "Coming soon..."
+            var contentDiv = document.querySelector('.content');
+            contentDiv.innerHTML = '<h2>Coming soon...</h2>';
+        }
+
+        function gradeSystemManagement() {
+            // Update content to display "Coming soon..."
+            var contentDiv = document.querySelector('.content');
+            contentDiv.innerHTML = '<h2>Coming soon...</h2>';
+        }
+
+        function conductlivetests() {
+            // Update content to display "Coming soon..."
+            var contentDiv = document.querySelector('.content');
+            contentDiv.innerHTML = '<h2>Coming soon...</h2>';
+        }
+        
+        function logout() {
+            firebase.auth().signOut().then(function() {
+                // Sign-out successful.
+                console.log("Logout successful");
+            }).catch(function(error) {
+                // An error happened.
+                console.error("Error logging out:", error);
+            });
+        }
+    </script>
+</body>
+</html>

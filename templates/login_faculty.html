@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty Login</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+}
+
+body {
+  margin-top: 80px;
+  background-color: #F2F5F8;
+}
+
+
+/*Nav bar ka CSS till line 133*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/*navigation mein logo k liye css*/
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #212227;
+  font-weight: 1000;
+  font-size: 1.9rem;
+  font-stretch: ultra-condensed;
+  padding-left: 20 px;
+}
+
+.logo img {
+  height: 70px ;
+  width: 70px ;
+  margin-right: 1rem;
+}
+
+/*navigation mein links k liye css*/
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin-left: 2.5rem;
+    position: relative;
+  }
+  
+  .nav-links a.nav-lin {
+    text-decoration: none;
+    color: #212227;
+    font-weight: 1000;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    position: relative;
+  }
+  
+  .nav-links a.nav-lin::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #F68716;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links a.nav-lin:hover {
+    color: #212227;
+  }
+  
+  .nav-links a.nav-lin:hover::before {
+    transform: scaleX(1);
+  }
+
+  .nav-btn {
+    background-color: #212227;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.50rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 140px;
+    height: 50px;
+  }
+
+  .nav-btn a{
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  
+  .hero {
+    background-color: #f2f2f2;
+    min-height: 90vh; /* Set the minimum height to 100% of the viewport height */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+  }
+  
+  .hero-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    width: 100%; /* Set the width to 100% to stretch across the screen */
+  }
+
+  .hero h2{
+    color: #000;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 39px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 94%; /* 83.66px */
+    letter-spacing: -2.895px;
+  }
+
+  
+  label {
+    font-size: x-large;
+    font-family: Manrope;
+    align-self: left;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: rgba(216, 216, 216, 0.43);
+  }
+
+  
+  .faculty-section,
+  .admin-section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background-color: #fff;
+    box-shadow: 0px 0px 25.3px 0px #D8D8D8;
+    padding: 2rem;
+    align-items: center;
+    height: 65vh;
+    border: 4px solid #D8D8D8;
+  }
+  
+  .faculty-section{
+    border-radius: 30px 0px 0px 30px;
+    border-right: 2px;
+  }
+
+  .admin-section{
+    border-radius: 0px 30px 30px 0px;
+    box-shadow: 0px 0px 0px 0px #D8D8D8;
+    flex: 1;
+    padding: 3.5rem 1.5rem 1rem 1rem;
+    background-color: #fff;
+    }
+
+  .admin-btn {
+    transition: all 0.5s;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0.7rem 1rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 0%;
+    margin-left: 20%;
+    width:250px;
+    font-size: 22px;
+  }
+  
+  .admin-btn {
+    gap: 10px;
+    border-radius: 47px;
+    background: #000;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 3px 4px 16.4px 0px #F8BB54;
+    color: #fff;
+  }
+
+  .admin-btn:after {
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s;
+  }
+  
+  .admin-btn:hover {
+    background-color: #F68716;
+    border-color: #F68716;
+    box-shadow: #F68716;
+  }
+  
+  .admin-btn:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+
+  .dropdown {
+    color: #212227;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 1000;
+    font-stretch: ultra-condensed;
+    display: none;
+    position: absolute;
+    margin-top:20%;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .nav-links li:hover > .dropdown {
+    display: block;
+  }
+  
+  .dropdown li {
+    padding: 12px 16px;
+    cursor: pointer;
+  }
+  
+  .dropdown li:hover {
+    background-color: #f68716;
+  }
+  
+  .dropdown li strong {
+    font-weight: bold;
+  }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <img src="static/Images/Faculty Flowlogo.png" alt="Logo">
+      <span>FacultyFlo</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="meetourteam.html" class="nav-lin">Meet our Team</a></li>
+      <li><a href="#" class="nav-lin">Support</a>  
+          <ul class="dropdown">
+            <li>Contact No: +919820904940</li>
+            <li>Email: facultyflo.care@gmail.com</li>
+          </ul>
+      </li>
+      <li><a href="reachus.html"><button class="nav-btn"><span>Reach Us</span></button></a></li>
+    </ul>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-container">
+      <image src="static/Images/faculty_man.png" class="faculty-section"></image>
+      <div class="admin-section">
+          <h2>Faculty <span style="color:#6dace7;">Login Page</span></h2>
+          <form id="loginForm" onsubmit="return handleSubmit(event)">
+            {% csrf_token %}
+            <label for="email">Email</label>
+            <input type="email" id="email" name='email' placeholder="Enter Email-Id">
+            <label for="password">Password</label>
+            <input type="password" id="password" name='password' placeholder="Enter Password">
+            <p class="error-message" id="errorMessage"></p>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <button class="admin-btn"> Submit </button>
+          </form>
+    </div>
+  </section>
+
+  <script>
+    function handleSubmit(event) {
+        event.preventDefault(); 
+        
+        // Get email and password values
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Make AJAX request to Django backend
+        $.ajax({
+            action: 'login_faculty',
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': $('input[name="csrfmiddlewaretoken"]').val()
+            },
+            data: { email: email, password: password },
+            success: function(response) {
+                // If login successful, redirect to profile page
+                if (response.success) {
+                    if (response.Designation == 'Professor')
+                    {
+                        window.location.href = 'profile_faculty.html';
+                    } 
+                    else
+                    {
+                      window.location.href = 'profile_hod.html';
+                    }
+                } else {
+                    // Show error message in alert
+                    alert(response.error_message);
+                    document.getElementById('email').value = '';
+                    document.getElementById('password').value = '';
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+        
+        return false; 
+    }
+</script>
+
+  
+
+
+</body>
+</html>

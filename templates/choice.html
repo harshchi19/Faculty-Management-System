@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FacultyFlo</title>
+  <link rel="stylesheet" href="static/choice_styes.css">
+</head>
+<body>
+  <style>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1rem 1.5rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+    
+    /*navigation mein logo k liye css*/
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      color: #212227;
+      font-weight: 1000;
+      font-size: 1.9rem;
+      font-stretch: ultra-condensed;
+      padding-left: 20 px;
+    }
+    
+    .logo img {
+      height: 70px ;
+      width: 70px ;
+      margin-right: 1rem;
+    }
+    
+    /*navigation mein links k liye css*/
+    .nav-links {
+        display: flex;
+        list-style: none;
+        align-items: center;
+      }
+      
+      .nav-links li {
+        margin-right: 0;
+        margin-left: 2.5rem;
+        position: relative;
+      }
+      
+      .nav-links a.nav-lin {
+        text-decoration: none;
+        color: #212227;
+        font-weight: 1000;
+        transition: color 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        position: relative;
+      }
+      
+      .nav-links a.nav-lin::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #F68716;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease;
+      }
+    
+      .nav-links a.nav-lin:hover {
+        color: #212227;
+      }
+      
+      .nav-links a.nav-lin:hover::before {
+        transform: scaleX(1);
+      }
+    
+      .nav-btn {
+        background-color: #212227;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.50rem;
+        transition: all 0.5s;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        font-weight: 600;
+        font-size: 1rem;
+        width: 140px;
+        height: 50px;
+      }
+    
+      .nav-btn a{
+        text-decoration: none;
+        color: #fff;
+      }
+      
+      .nav-btn:after {
+        content: '>>>';
+        position: absolute;
+        opacity: 0;
+        top: 50%;
+        right: -20px;
+        transform: translateY(-50%);
+        transition: 0.5s;
+      }
+      
+      .nav-btn:hover {
+        background-color: #F68716;
+        border-color: #F68716;
+        box-shadow: #F68716;
+        padding-right: 24px;
+        padding-left: 8px;
+      }
+      
+      .nav-btn:hover:after {
+        opacity: 1;
+        right: 10px;
+      }
+    
+    /*dropdown ka css*/
+      .dropdown {
+        color: #212227;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 1000;
+        font-stretch: ultra-condensed;
+        display: none;
+        position: absolute;
+        margin-top:20%;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .nav-links li:hover > .dropdown {
+        display: block;
+      }
+      
+      .dropdown li {
+        padding: 12px 16px;
+        cursor: pointer;
+      }
+      
+      .dropdown li:hover {
+        background-color: #f68716;
+      }
+      
+      .dropdown li strong {
+        font-weight: bold;
+      }
+  </style>
+  <nav>
+    <div class="logo">
+      <img src="static/Images/Faculty Flowlogo.png" alt="Logo">
+      <span>FacultyFlo</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="meetourteam.html" class="nav-lin">Meet our Team</a></li>
+      <li><a href="#" class="nav-lin">Support</a>  
+          <ul class="dropdown">
+            <li>Contact No: +919820904940</li>
+            <li>Email: facultyflo.care@gmail.com</li>
+          </ul>
+      </li>
+      <li><a href="reachus.html"><button class="nav-btn"><span>Reach Us</span></button></a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-container">
+      <div class="faculty-section">
+        <div class="faculty-image">
+          <img src="static/Images/choice-image-faculty.png" alt="Faculty Image">
+        </div>
+        <h2>Faculty</h2>
+        <a href='login_faculty.html'><button class="faculty-btn">Login</button></a>
+      </div>
+      <div class="admin-section">
+        <div class="admin-image">
+          <img src="static/Images/choice-image-admin.png" alt="Admin Image">
+        </div>
+        <h2>Admin</h2>
+        <a href='institute_login.html'><button class="admin-btn"> Login </button></a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

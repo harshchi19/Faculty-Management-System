@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reach Out Us</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Manrope', sans-serif;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%; 
+        margin: 50px auto;
+        border: 2px solid #f68716;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .left-section,
+    .right-section {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .left-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-section img {
+        margin-bottom: 15px;
+        height:40%;
+        width:40%;
+    }
+
+    .left-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .left-section ul li {
+        margin-bottom: 10px;
+    }
+
+    .left-section ul li a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .left-section ul li a:hover {
+        color: #f68716;
+    }
+
+    .right-section .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
+        color: #f68716;
+        font-weight: 1000;
+        font-size: 1.9rem;
+        font-stretch: ultra-condensed;
+        letter-spacing:-1.5px;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f68716;
+        color: white;
+        cursor: pointer;
+    }
+    
+
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left-section">
+        <img src="static/Images/reach_lady.png" alt="Mail Icon">
+        <h2 style="color: #6e7cda; margin:5%; font-size: 2.2rem;">Connect with Us </h2>
+        <ul style="margin: 0; padding: 0; font-weight: 700; list-style: none; text-align: center;">
+            <li style="display: flex; align-items: center;">
+                <img src="static/Images/linkedin_logo.png" style="height: 30px; width: 30px; margin-right: 10px;">
+                <a style="padding-bottom: 10%; " href="#">LinkedIn</a>
+            </li>
+            <li style="display: flex; align-items: center;">
+                <img src="static/Images/facebook_logo.png" style="height: 30px; width: 30px; margin-right: 10px;">
+                <a style="padding-bottom: 10%; " href="#">Facebook</a>
+            </li>
+            <li style="display: flex; align-items: center;">
+                <img src="static/Images/instagram_icon.png" style="height: 30px; width: 30px; margin-right: 10px;">
+                <a style="padding-bottom: 10%; " href="#">Instagram</a>
+            </li>
+        </ul>
+        
+    </div>
+    <div class="right-section" style="border-left: 1px solid lightgray;">
+        <div class="form-container">
+            <h2>Reach Us Out</h2>
+            <form action="#"style=" font-family: 'Manrope', sans-serif;">
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <textarea name="query" placeholder="Your Query" required></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
