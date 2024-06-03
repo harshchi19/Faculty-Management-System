@@ -1,0 +1,182 @@
+/* Sidebar */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+*{
+  font-family: 'Manrope', sans-serif;
+}
+
+.sidebar {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow-y: auto;
+  }
+
+  .nav-logo {
+    display: inline-flex;
+    align-items: center;
+    color: #212227;
+    font-weight: 1000;
+    font-size: 1.7rem;
+    font-stretch: ultra-condensed;
+    letter-spacing: -1.895px;
+    padding-left: 15px;
+    padding-top: 15px ;
+    padding-bottom: 20px;
+  }
+    
+  .nav-logo img {
+    height: 70px ;
+    width: 70px ;
+    margin-right: 1rem;
+  }
+  
+  .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-menu li a {
+    display: block;
+    padding: 1rem;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: large;
+    font-weight: bolder;
+    font-stretch: condensed;
+  }
+  
+  .nav-menu li a:hover
+   {
+    color : rgb(0, 0, 0);
+    background-color: #f68716;
+  }
+  
+
+  
+  /* Circular Button */
+  .circular-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffa500;
+    color: #fff;
+    text-decoration: none;
+    position: fixed;
+    bottom: 100px;
+    right: 120px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+
+  .circular-btn img{
+    height: 7rem;
+    width: 7rem;
+  }
+  
+  
+  /* Animations */
+  .nav-menu li a {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Logo ka styling */
+  .logo-container {
+    text-align: center; 
+    margin-bottom: 20px; 
+  }
+  
+  .logo {
+    height: 57px; 
+    max-width: 100%; 
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  /*Profile k liye styling*/
+  #profile {
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse; 
+  }
+  
+  th, td {
+    padding: 10px;
+    width: 150px;
+    border: 1px solid #ddd; 
+    text-align: left; 
+  }
+  
+  th {
+    background-color: #f5f5f5; 
+    font-weight: bold; 
+  }
+  
+
+  /* Create */
+
+  .dashboard {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100vh;
+}
+
+.dashboard-app {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 2;
+    -webkit-flex-grow: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+    margin-top: 84px;
+}
+
+.dashboard-content {
+    -webkit-box-flex: 2;
+    -webkit-flex-grow: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+    padding: 25px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+      padding: 15px 0px;
+  }
+}
+

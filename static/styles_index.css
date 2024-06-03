@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+}
+
+body {
+  margin-top: 80px;
+  background-color: #F2F5F8;
+}
+
+
+/*Nav bar ka CSS till line 133*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/*navigation mein logo k liye css*/
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #212227;
+  font-weight: 1000;
+  font-size: 1.9rem;
+  font-stretch: ultra-condensed;
+  padding-left: 20 px;
+}
+
+.logo img {
+  height: 70px ;
+  width: 70px ;
+  margin-right: 1rem;
+}
+
+/*navigation mein links k liye css*/
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin-left: 2.5rem;
+    position: relative;
+  }
+  
+  .nav-links a.nav-lin {
+    text-decoration: none;
+    color: #212227;
+    font-weight: 1000;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    position: relative;
+  }
+  
+  .nav-links a.nav-lin::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #F68716;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links a.nav-lin:hover {
+    color: #212227;
+  }
+  
+  .nav-links a.nav-lin:hover::before {
+    transform: scaleX(1);
+  }
+
+  .nav-btn {
+    background-color: #212227;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.50rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 140px;
+    height: 50px;
+  }
+
+  .nav-btn a{
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .nav-btn:after {
+    content: '>>>';
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    transition: 0.5s;
+  }
+  
+  .nav-btn:hover {
+    background-color: #F68716;
+    border-color: #F68716;
+    box-shadow: #F68716;
+    padding-right: 24px;
+    padding-left: 8px;
+  }
+  
+  .nav-btn:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+
+
+  /*Hero content k liye CSS*/
+  /* Existing navbar styles */
+/* Existing navbar styles */
+
+.hero {
+    background-color: #f5f5f5;
+    padding: 8rem 2rem;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /*
+  .hero h1 {
+    font-size: 7rem;
+    font-weight: 900;
+    color: #212227;
+    margin-bottom: 1rem;
+    letter-spacing: -7px; 
+    line-height: 1;
+  }
+  */
+
+  .hero h1{
+    color: #000;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 109px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 94%; /* 83.66px */
+    letter-spacing: -4.895px;
+  }
+
+  .hero-tag{
+    font-size: large;
+    border-radius: 47px;
+    border: 1px solid #A09F9F;
+    background: #D3D3D3;
+    display: inline-flex;
+    padding: 12px 11px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .hero p {
+    font-size: 1.4rem;
+    color: #555;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 600; 
+    line-height: 1.4; 
+}
+
+.hero-btn {
+    display: inline-flex;
+    padding: 25px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    border: 2px solid #f68716;
+    border-radius: 0.75rem;
+    padding-block: 1rem;
+    padding-inline: 1.75rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.45s cubic-bezier(0.32, 0, 0.67, 0);
+    border-radius: 47px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 3px 4px 16.4px 0px #F8BB54;
+    
+    
+  
+    & .hero-text-wrapper {
+      height: clamp(1rem, (1rem + 1.5vw), 3rem);
+      width: 120%;
+      display: flex;
+      flex-direction: column;
+      row-gap: clamp(1rem, (1rem + 1.5vw), 3rem);
+      position: relative;
+      color: #f68716;
+      z-index: 2;
+      
+    }
+  
+    & .hero-text {
+        color: #f68716;
+        text-align: center;
+        font-family: Manrope;
+        font-size: 15px;
+        font-weight: 1000;
+        line-height: 20px;
+        letter-spacing: -1px;
+        height: fit-content;
+        font-size: clamp(1rem, (1rem + 1.5vw), 3rem);
+        transition: transform 0.45s cubic-bezier(0.32, 0, 0.67, 0);
+        line-height: 1;
+    }
+  
+    & .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      color:#fff;
+      background-color: #f68716;
+      clip-path: circle(0% at 50% 120%);
+      transition: clip-path 1s ease;
+      z-index: 1;
+    }
+  
+    &:hover {
+      & .hero-text {
+        color:#fff;
+        transform: translateY(calc(calc(100% + (clamp(1rem, (1rem + 1.5vw), 3rem))) * -1));
+      }
+  
+      & .hero-overlay {
+        clip-path: circle(100% at 50% 100%);
+      }
+    }
+  }
+
+
+  .dashboard-image {
+    display: inline-flexbox;
+    justify-content: center;
+    fill:#212227;
+    width: 1140px;
+    height: 810.667px;
+    flex-shrink: 0;
+    border-radius: 67.838px;
+    border: 11.104px solid #212227;
+    background: #F2F5F8;
+  }
+
+

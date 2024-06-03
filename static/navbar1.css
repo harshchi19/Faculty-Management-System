@@ -1,0 +1,206 @@
+/* Sidebar */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body{
+  background-color: #f2f5f8;
+}
+
+*{
+  font-family: 'Manrope', sans-serif;
+}
+
+.sidebar {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow-y: auto;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    color: #212227;
+    font-weight: 1000;
+    font-size: 1.7rem;
+    font-stretch: ultra-condensed;
+    letter-spacing: -1.895px;
+    padding-left: 15px;
+    padding-top: 15px ;
+    padding-bottom: 20px;
+  }
+    
+  .logo img {
+    height: 70px ;
+    width: 70px ;
+    margin-right: 1rem;
+  }
+  
+  .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-menu li a {
+    display: block;
+    padding: 1rem;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: large;
+    font-weight: bolder;
+    font-stretch: condensed;
+  }
+  
+  .nav-menu li a:hover,
+  .nav-menu li a.active {
+    background-color: #f2f2f2;
+  }
+  
+  .nav-menu li a.active {
+    font-weight: bold;
+  }
+  
+  /* Circular Button */
+  .circular-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffa500;
+    color: #fff;
+    text-decoration: none;
+    position: fixed;
+    bottom: 100px;
+    right: 120px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+
+  .circular-btn img{
+    height: 7rem;
+    width: 7rem;
+  }
+  
+  
+  /* Animations */
+  .nav-menu li a {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
+
+/*tools ka css till line206*/
+.icon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 15px 60px 15px 0px;
+  width: 100%;
+  height: 290px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 0px 15.2px 0px #979797;
+}
+
+
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 5px;
+  margin: 10px;
+  height: 85%;
+  width:220px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+/*below this are for animations*/
+.sharepoint,
+.excel,
+.word,
+.powerpoint,
+.onenote,
+.teams{
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.excel:hover{
+  transform: translateY(-5px);
+  box-shadow: 0px 3px 8px 4px #117d42;
+}
+
+.word:hover{
+  transform: translateY(-5px);
+  box-shadow: 0px 3px 8px 4px #103f91;
+}
+
+.powerpoint:hover{
+  transform: translateY(-5px);
+  box-shadow: 0px 3px 8px 4px #c43f1e;
+}
+
+.teams:hover{
+  transform: translateY(-5px);
+  box-shadow: 0px 3px 8px 4px #5159bf;
+}
+
+.onenote:hover{
+  transform: translateY(-5px);
+  box-shadow: 0px 3px 8px 4px #7d19a8;
+}
+
+.sharepoint:hover{
+  transform: translateY(-5px);
+  box-shadow: 0px 3px 8px 4px #03868B;
+}
+
+.app-card img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.icon-container h3{
+  color: #212227;
+  font-weight: 1000;
+  font-size: 1.5rem;
+  font-stretch: ultra-condensed;
+  letter-spacing: -0.8;
+}
+
+.app-card span {
+  color: #212227;
+  font-weight: 1000;
+  font-size: 1.5rem;
+  font-stretch: ultra-condensed;
+  letter-spacing: -0.895px;
+  font-weight: bold;
+  text-align: center;
+}
